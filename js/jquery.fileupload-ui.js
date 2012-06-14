@@ -241,7 +241,7 @@
             progressall: function (e, data) {
                 var $this = $(this),
                     progress = parseInt(data.loaded / data.total * 100, 10),
-                    globalProgressNode = $this.find('.fileupload-progress'),
+                    globalProgressNode = $('.fileupload-progress'),
                     extendedProgressNode = globalProgressNode
                         .find('.progress-extended');
                 if (extendedProgressNode.length) {
@@ -260,7 +260,7 @@
             // Callback for uploads start, equivalent to the global ajaxStart event:
             start: function (e) {
                 var that = $(this).data('fileupload');
-                that._transition($(this).find('.fileupload-progress')).done(
+                that._transition($('.fileupload-progress')).done(
                     function () {
                         that._trigger('started', e);
                     }
@@ -269,7 +269,7 @@
             // Callback for uploads stop, equivalent to the global ajaxStop event:
             stop: function (e) {
                 var that = $(this).data('fileupload');
-                that._transition($(this).find('.fileupload-progress')).done(
+                that._transition($('.fileupload-progress')).done(
                     function () {
                         $(this).find('.progress')
                             .attr('aria-valuenow', '0')
